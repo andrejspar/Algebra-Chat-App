@@ -1,0 +1,33 @@
+.Members {
+  flex: 0.5;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  overflow-y: hidden;
+}
+
+.Members-count {
+  font-size: 1rem;
+  color: #2e3949;
+  margin-bottom: 0.5rem;
+}
+
+.Members-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
+}
+
+.Member {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.username {
+  font-size: 0.9rem;
+  color: #2e3949;
+  margin-left: 0.5rem;
+}

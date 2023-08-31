@@ -1,0 +1,58 @@
+.Messages-container {
+  flex: 2;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.Messages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Messages-message {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem;
+}
+
+.Messages-message:last-child {
+  border-bottom: none;
+}
+
+.Messages-message .Message-content {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  color: #2e3949;
+}
+
+.Messages-message.currentMember .Message-content {
+  background-color: #3796d8;
+  color: #2e3949;
+  align-self: flex-end;
+}
+
+.Messages-message .Message-content {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.Message-content {
+  font-size: 0.95rem;
+}
+
+.username {
+  font-size: 0.9rem;
+  color: #2e3949;
+}

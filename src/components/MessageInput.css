@@ -1,0 +1,41 @@
+.Input {
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Input form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.MessageInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding-left: 40%;
+}
+
+.Input input {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.Input button {
+  padding: 0.7rem 1.5rem;
+  background-color: #55759e;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+}
