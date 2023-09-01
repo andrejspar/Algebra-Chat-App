@@ -56,3 +56,51 @@
   font-size: 0.9rem;
   color: #2e3949;
 }
+
+@media screen and (max-width: 768px) {
+  .Messages-container {
+    padding: 0.5rem;
+  }
+
+  .Messages-message {
+    padding: 0.25rem;
+  }
+
+  .avatar {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+  }
+
+  .Message-content {
+    font-size: 0.85rem;
+  }
+
+  .username {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Messages-container {
+    padding: 0.25rem;
+  }
+
+  .Messages-message {
+    padding: 0.1rem;
+  }
+
+  .avatar {
+    width: 15px;
+    height: 15px;
+    margin-right: 0.1rem;
+  }
+
+  .Message-content {
+    font-size: 0.7rem;
+  }
+
+  .username {
+    font-size: 0.6rem;
+  }
+}

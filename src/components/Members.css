@@ -31,3 +31,28 @@
   color: #2e3949;
   margin-left: 0.5rem;
 }
+
+@media screen and (max-width: 480px) {
+  .Member {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    display: none;
+  }
+
+  .username {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: #2e3949;
+  }
+
+  .Members-list::-webkit-scrollbar {
+    width: 0.1em;
+  }
+
+  .Members-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}

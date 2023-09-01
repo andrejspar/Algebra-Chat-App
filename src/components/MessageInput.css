@@ -39,3 +39,37 @@
   font-size: 1rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .MessageInput {
+    padding: 0.25rem;
+  }
+
+  .Input input {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    margin-right: 0.25rem;
+  }
+
+  .Input button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .MessageInput {
+    padding: 0.1rem;
+  }
+
+  .Input input {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    margin-right: 0.1rem;
+  }
+
+  .Input button {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.7rem;
+  }
+}

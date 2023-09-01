@@ -6,7 +6,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
 }
@@ -17,6 +17,7 @@
   padding: 1rem;
   text-align: center;
 }
+
 .Content {
   display: flex;
   flex-grow: 1;
@@ -41,4 +42,32 @@
   border-top: 1px solid #ddd;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    font-size: 14px;
+  }
+
+  .Header {
+    padding: 0.5rem;
+  }
+
+  .MessageInput {
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App {
+    font-size: 12px;
+  }
+
+  .Header {
+    padding: 0.25rem;
+  }
+
+  .MessageInput {
+    padding: 0.25rem;
+  }
 }
