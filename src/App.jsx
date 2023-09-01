@@ -47,11 +47,11 @@ class App extends Component {
     },
   };
 
-  constructor() {
-    super();
+  componentDidMount() {
     this.drone = new window.Scaledrone("LgFaSHlhvG2BizoN", {
       data: this.state.me,
     });
+
     this.drone.on("open", (error) => {
       if (error) {
         return console.error(error);
@@ -60,26 +60,42 @@ class App extends Component {
       me.id = this.drone.clientId;
       this.setState({ me });
     });
+
     const room = this.drone.subscribe("observable-room");
+
     room.on("message", (message) => {
       const messages = [...this.state.messages];
       messages.push(message);
       this.setState({ messages });
     });
+
     room.on("members", (members) => {
       this.setState({ members });
     });
+
     room.on("member_join", (member) => {
       const { members } = this.state;
       this.setState({ members: [...members, member] });
     });
+
     room.on("member_leave", ({ id }) => {
       const members = [...this.state.members];
       const index = members.findIndex((m) => m.id === id);
-      members.splice(index, 1);
-      this.setState({ members });
+      if (index !== -1) {
+        members.splice(index, 1);
+        this.setState({ members });
+      }
     });
   }
+
+  onSendMessage = (message) => {
+    if (message.trim() !== "") {
+      this.drone.publish({
+        room: "observable-room",
+        message,
+      });
+    }
+  };
 
   render() {
     const { members, messages, me } = this.state;
@@ -104,15 +120,6 @@ class App extends Component {
       </div>
     );
   }
-
-  onSendMessage = (message) => {
-    if (message.trim() !== "") {
-      this.drone.publish({
-        room: "observable-room",
-        message,
-      });
-    }
-  };
 }
 
 export default App;

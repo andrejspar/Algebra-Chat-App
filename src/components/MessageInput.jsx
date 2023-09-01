@@ -23,7 +23,6 @@ class MessageInput extends Component {
             value={this.state.text}
             type="text"
             placeholder="Type here..."
-            autoFocus="true"
           />
           <button>Send</button>
         </form>

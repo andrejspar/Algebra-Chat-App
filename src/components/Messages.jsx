@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import React from "react";
 import "./Messages.css";
 
+let messageIdCounter = 0;
+
 export default function Messages({ messages, me }) {
   const bottomRef = useRef(null);
   useEffect(() => {
@@ -9,30 +11,30 @@ export default function Messages({ messages, me }) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
   });
+
   return (
     <div className="Messages-container">
       <ul className="Messages-list">
-        {messages.map((m) =>
-          Message(
-            m,
-            me,
-            m.member.id === me.id ? "currentMember" : "otherActiveMember"
-          )
-        )}
+        {messages.map((m) => (
+          <Message key={messageIdCounter++} message={m} me={me} />
+        ))}
         <div ref={bottomRef}></div>
       </ul>
     </div>
   );
 }
 
-function Message({ member, data, id }, me) {
+function Message({ message, me }) {
+  const { member, data } = message;
   const { username, color } = member.clientData;
   const messageFromMe = member.id === me.id;
+
   const className = messageFromMe
     ? "Messages-message currentMember"
     : "Messages-message";
+
   return (
-    <li key={id} className={className}>
+    <li className={className}>
       <span className="avatar" style={{ backgroundColor: color }} />
       <div className="Message-content">
         <div className="username">{username}</div>
